@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+
+   Author: Antony peter
+   Date:   2021-06-15  
+
+   -->
+   
+   <title>Peter_300330254_lab05</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+   <link href="reset.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet" />
+   <link href="flex.css" rel="stylesheet" />
+   <link href="navion.css" rel="stylesheet" />
+</head>
+
+<body>
+   <header>
+      <h1> header </h1>
+      
+      <nav class="horizontal">
+         <a id="navicon" href="#"><img src="tf_navicon.png" alt="" /></a>
+         <ul>
+            <li><a href="#">menu 1</a></li>
+            <li><a href="#">menu 2</a></li>
+            <li><a href="#">menu 3</a></li>
+         </ul>
+      </nav>
+   </header>
+   
+   <aside>
+      <h1>Side bar</h1>
+      <ol></ol>
+   </aside>
+   
+   <section id="main">
+      <article id="overview">
+         <h1></h1>
+         <p></p>
+      </article>
+      
+      <section id="topics">
+         <article>
+            <h1>feature 1</h1>
+            <p> </p>
+         </article>
+         <article>
+            <h1>feature 2</h1>
+            <p> </p>
+         </article>
+         <article>
+            <h1>feature 3</h1>
+            <p> </p>
+         </article>
+         
+      </section>
+      
+   </section>
+   
+   <footer>
+      footer
+   </footer>
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////
+
+nevion.css file
+
+@charset "utf-8";
+
+/* ===========
+   Base Styles
+   ===========
+*/
+
+a#navicon {
+   display: none;
+}
+
+/* ===============================
+   Mobile Devices: 0 to 480px 
+   ===============================
+*/
+
+@media only screen and (max-width: 480px) {
+
+   a#navicon {
+      display: block;
+   }
+   
+   nav.horizontal ul {
+      display: none;
+   }
+   
+   a#navicon:hover+ul, nav.horizontal ul:hover {
+      display: block;
+   }
+   
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+flex.css file
+
+@charset "utf-8";
+
+
+/* ================
+   Base Flex Styles
+   ================
+*/
+
+body {
+   display: flex;
+   flex-flow: row wrap;
+}
+
+header, footer {
+   width: 200%;
+}
+
+aside { 
+   flex: 1 1 120px;
+}
+
+section#main {
+   flex: 4 1 361px;
+}
+
+section#topics {
+   display: flex;
+   flex-flow: row wrap;
+}
+
+section#topics article {
+   flex: 1 1 200px;
+}
+
+/* =========================
+   Mobile Styles: 0 to 480px 
+   =========================
+*/
+
+@media only screen and (max-width: 480px) {
+  
+   aside {
+      order: 99;
+   }
+   
+   footer {
+      order: 100;
+   }
+ 
+}
+
+/* ============================================
+   Tablet and Desktop Styles: 481px and greater 
+   ============================================
+*/
+
+@media only screen and (min-width: 481px) {
+
+   nav.horizontal ul {
+      display: flex;
+      flex-flow: column nowrap;
+   }
+   
+   nav.horizontal li {
+      flex: 1 1 auto;
+   }
+}
+
+@media only screen and (min-width: 1000px){
+   nav.horizontal ul{
+       display: flex;
+       flex-flow: row nowrap;
+   }
+
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+style.css file
+
+@charset "utf-8";
+
+
+
+/* HTML and Body Styles */
+
+html {
+  
+   height: 100%;
+   font-family: Verdana, Geneva, sans-serif;
+   font-size: 20px;
+}
+
+body {
+   background: rgb(156, 147, 5);   
+   box-shadow: rgb(209, 19, 19) 5px 0px 15px,
+               rgb(177, 11, 11) -5px 0px 15px;
+   margin: 0px auto;
+   min-height: 100%;
+   min-width: 200px;
+   max-width: 1024px;
+   width: 100%;
+}
+
+/* Body Header Styles */
+
+body header {
+   background: rgb(120, 14, 224);   
+   display: block;
+   width: 100%;
+}
+
+/* Horizonal Navigation Styles */
+
+nav.horizontal {
+   background-color: rgb(3, 95, 8);
+   clear: both;
+}
+
+nav.horizontal li {
+   color: rgb(238, 55, 35);
+   font-size: 1em;
+   line-height: 1em;
+   text-transform: uppercase;
+}
+
+nav.horizontal ul li a {
+   display: block;
+   padding-left: 40px;
+}
+
+
+nav.horizontal ul li a:visited, nav.horizontal ul li a:link {
+   color: rgb(23, 31, 31);
+}
+
+nav.horizontal ul li a:hover, nav.horizontal ul li a:active {
+   background-color: rgb(23, 31, 155);
+   color: rgb(23, 31, 231);
+}
+
+/* Aside Styles */
+
+body aside {
+   background-color: rgb(75, 45, 12);
+   text-align: top;
+}
+
+body aside h1 {
+   background-color: rgb(75, 45, 12);
+   color: rgb(2, 2, 2);
+   font-size: 1.5em;
+   font-weight: normal;
+   letter-spacing: 0.2em;
+   line-height: 1.5em;
+   text-align: top;
+}
+
+/* Section Styles */
+
+section#main {
+   background: rgb(216, 215, 215);
+}
+
+/* Article Styles */
+
+article#overview {
+   padding: 200px;
+}
+
+article#overview h1 {
+   color: black;
+   font-size: 2em;
+   letter-spacing: 0.2em;
+   line-height: 1em;
+   margin: 10px 0px 20px 0px;
+   padding-left: 12px;
+}
+
+article#overview p {
+   margin: 12px;
+}
+
+section#topics article {
+   border: 1px solid rgb(31, 73, 135);
+   border-radius: 20px;
+   margin: 10px;
+}
+
+section#topics article:nth-of-type(even) {
+   background-color: rgb(64, 13, 13);
+}
+
+section#topics article:nth-of-type(odd) {
+   background-color: rgb(64, 13, 13);
+}
+
+section#topics article h1 {
+   font-size: 1.2em;
+   margin: 5px;
+   text-align: center;
+}
+
+section#topics article p {
+   margin: 8px;
+}
+
+/* Footer Styles */
+
+footer {
+   background-color: rgb(12, 104, 224);
+   font-size: 1em;
+   text-align: center;
+   padding: 10px 0px;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+reset.css file
+@charset "utf-8";
+
+
+/* Basic styles to be used with all devices and under all conditions */
+
+article, aside, figcaption, figure,
+footer, header, main, nav, section { 
+   display: block;
+}
+
+address, article, aside, blockquote, body, cite, 
+div, dl, dt, dd, em, figcaption, figure, footer, 
+h1, h2, h3, h4, h5, h6, header, html, img, 
+li, main, nav, nav a, ol, p, section, span, ul {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;  
+}
+
+
+/* Set the default page element styles */
+
+body {
+   line-height: 1.2em;
+}
+
+ul, ol {
+   list-style: none;
+}
+
+nav ul {
+   list-style: none;
+   list-style-image: none;
+}
+
+nav a {
+   text-decoration: none;
+}
+
+
+
